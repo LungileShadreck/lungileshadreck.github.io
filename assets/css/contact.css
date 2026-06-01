@@ -1,0 +1,76 @@
+/*
+ * contact.css — Lungile Shadreck Portfolio
+ * Contact page specific styles
+ * Aligned with black/green/gray design system
+ */
+
+/* Override generic contact.css contamination from old template */
+.container {
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Contact form inputs — see theme.css for full treatment */
+label {
+  font-weight: 500;
+  color: var(--gray-300, #d4d4d4);
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: 'Inter', 'Roboto', Helvetica, sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  background: var(--bg-elevated, #1a1a1a);
+  border: 1px solid var(--gray-700, #404040);
+  border-radius: 6px;
+  color: var(--gray-200, #e5e5e5);
+  padding: 0.75em 1em;
+  font-size: 0.95em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--green-muted, #15803d);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.7em;
+}
+
+/* Submit button — via theme.css primary button styles */
+input[type="submit"],
+button[type="submit"] {
+  font-family: 'Inter', 'Roboto', Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85em;
+}
+
+/* Reset button */
+input[type="reset"] {
+  color: var(--gray-500, #737373);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .contact-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

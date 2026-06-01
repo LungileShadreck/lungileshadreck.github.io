@@ -1,0 +1,166 @@
+/*
+ * enhancements.css — Lungile Shadreck Portfolio
+ * UX/UI micro-interaction layer
+ * Updated: uses CSS variables from theme.css
+ */
+
+/* ============================================================
+   1. IMAGE HOVER — see theme.css (consolidated there)
+   ============================================================ */
+a.image.fit {
+  overflow: hidden;
+  display: block;
+}
+
+a.image.fit img {
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+a.image.fit:hover img {
+  transform: scale(1.035);
+}
+
+/* ============================================================
+   2. SKILL ICON TILES — hover lift (detail in theme.css)
+   ============================================================ */
+.box.alt section.col-4 {
+  transition: transform 0.25s ease;
+}
+
+/* ============================================================
+   3. FOOTER SOCIAL ICONS — scale on hover
+   ============================================================ */
+footer#footer ul.icons li a {
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+}
+
+footer#footer ul.icons li a:hover {
+  transform: scale(1.25) translateY(-2px);
+}
+
+/* ============================================================
+   4. NAV — active state & hire me glow (via theme.css)
+   ============================================================ */
+nav#nav ul li a.active {
+  color: var(--green-primary, #22c55e) !important;
+}
+
+nav#nav .button.primary {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+nav#nav .button.primary:hover {
+  box-shadow: 0 0 16px var(--green-glow, rgba(34,197,94,0.25));
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   5. SUB-PAGE TOP BREATHING ROOM
+   ============================================================ */
+div#main.wrapper.style1 {
+  padding-top: 5em;
+}
+
+/* ============================================================
+   6. SIDEBAR IMAGE — constrain height
+   ============================================================ */
+section#sidebar .image.fit {
+  max-height: 260px;
+  overflow: hidden;
+}
+
+section#sidebar .image.fit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   7. FADE-IN ON SCROLL — Intersection Observer utility
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in:nth-child(2) { transition-delay: 0.1s; }
+.fade-in:nth-child(3) { transition-delay: 0.2s; }
+.fade-in:nth-child(4) { transition-delay: 0.3s; }
+.fade-in:nth-child(5) { transition-delay: 0.4s; }
+.fade-in:nth-child(6) { transition-delay: 0.5s; }
+
+/* ============================================================
+   8. SCROLL-TO-TOP BUTTON (base — overridden by theme.css)
+   ============================================================ */
+#scroll-top {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  width: 2.75em;
+  height: 2.75em;
+  background: #1a1a1a;
+  color: #22c55e;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease,
+              background 0.3s ease, border-color 0.3s ease;
+  z-index: 9999;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+#scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scroll-top:hover {
+  background: #15803d;
+  border-color: #16a34a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(34, 197, 94, 0.25);
+}
+
+/* ============================================================
+   9. BUTTON TRANSITIONS
+   ============================================================ */
+.button {
+  transition: background 0.25s ease, color 0.25s ease,
+              border-color 0.25s ease, transform 0.2s ease,
+              box-shadow 0.25s ease !important;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   10. HEADER.MAJOR UNDERBAR
+   ============================================================ */
+header.major:after {
+  background: var(--green-primary, #22c55e) !important;
+  opacity: 0.7;
+}
+
+/* ============================================================
+   11. SPOTLIGHT SECTION CONTENT entrance
+   ============================================================ */
+section.spotlight .content {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
