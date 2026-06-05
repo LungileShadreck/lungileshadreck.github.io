@@ -53,7 +53,6 @@ const galleryData = {
             "featured": false,
             "images": [
                 "images/Core Projects/personal/Illustrations/Godfidence 2.jpg",
-                "images/Core Projects/personal/Illustrations/JUST DO IT-Recovered.jpg",
                 "images/Core Projects/personal/Illustrations/JUST DO IT.jpg",
                 "images/Core Projects/personal/Illustrations/JUST DO IT.png",
                 "images/Core Projects/personal/Illustrations/Untitled-5.jpg",
